@@ -2,6 +2,7 @@
 
 A basic calculator built with React and Vite. Supports addition, subtraction, multiplication, division, decimals, clear (AC), delete (DEL), sign toggle (+/-), and keyboard input.
 
+Use it from here: [calculator](https://react-calculator-gray-seven.vercel.app/)
 ## Features
 - Basic arithmetic operations: +, −, ×, ÷
 - Decimal point support
