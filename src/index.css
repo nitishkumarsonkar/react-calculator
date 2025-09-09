@@ -1,0 +1,120 @@
+/* index.css */
+/* Global styles for the calculator app. Uses CSS Grid for the keypad layout. */
+
+/* Root variables for theming (light theme). */
+:root {
+  --background-color: #f0f0f0;
+  --display-background: #ffffff;
+  --button-background: #e0e0e0;
+  --button-hover: #d0d0d0;
+  --text-color: #333333;
+  --operation-color: #ff9500; /* Orange for operations */
+  --equals-color: #ff9500; /* Orange for = */
+}
+
+/* Basic reset and body styling. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main calculator container. */
+.calculator {
+  display: grid;
+  grid-template-rows: auto 1fr; /* Display on top, keypad below */
+  width: 300px; /* Fixed width for desktop; responsive below */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Display styles. */
+.display {
+  background-color: var(--display-background);
+  padding: 20px;
+  text-align: right;
+  font-size: 2em;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.previous-operand {
+  font-size: 0.75em;
+  color: #999999; /* Dimmed text */
+  min-height: 1.2em; /* Reserve space */
+}
+
+.current-operand {
+  font-size: 1.5em;
+  color: var(--text-color);
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-right: 10px; /* Padding to prevent scrollbar overlap */
+}
+
+/* Keypad grid layout: 4 columns. */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 1px; /* Small gap between buttons */
+}
+
+/* Button styles. */
+.button {
+  background-color: var(--button-background);
+  border: none;
+  padding: 20px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  color: var(--text-color);
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.button:active {
+  background-color: #c0c0c0;
+}
+
+/* Special styles for operation buttons (+, -, ×, ÷). */
+.button.operation {
+  background-color: var(--operation-color);
+  color: #ffffff;
+}
+
+.button.operation:hover {
+  background-color: #e68a00;
+}
+
+/* Equals button. */
+.button.equals {
+  background-color: var(--equals-color);
+  color: #ffffff;
+}
+
+.button.equals:hover {
+  background-color: #e68a00;
+}
+
+/* Span-two class for wider buttons (e.g., 0). */
+.span-two {
+  grid-column: span 2;
+}
+
+/* Accessibility: Focus outline for keyboard navigation. */
+.button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: -2px;
+}
